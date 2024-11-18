@@ -4,30 +4,9 @@ import styles from "./page.module.css";
 
 import Timeline from "@/components/Timeline";
 
-const NAV_LINKS = [
-  {label: "Resume", href: "resume"},
-  {label: "Portfolio", href: "portfolio"},
-  {label: "Contact", href: "contact"},
-  {label: "Fun Facts", href: "fun-facts"},
-]
-
 export default function Home() {
   return (
     <div  className={styles.page}>
-        <header className={styles.header}>
-            <div className={styles.title}>
-              Colin J. Eberhardt
-            </div>
-            <div className={styles.links}>
-              { NAV_LINKS.map((link:any) => 
-              <Link 
-                className={styles.link}
-                href={link.href}>
-                  {link.label}
-                </Link>
-              )}
-            </div>
-        </header>
         <main className={styles['main-content']}>
           <div className={styles['content-container']}>
             {/* Prof pic and quick about me */}
