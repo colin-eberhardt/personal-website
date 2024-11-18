@@ -1,95 +1,72 @@
 import Image from "next/image";
+import Link from "next/link";
 import styles from "./page.module.css";
+
+import Timeline from "@/components/Timeline";
+
+const NAV_LINKS = [
+  {label: "Resume", href: "resume"},
+  {label: "Portfolio", href: "portfolio"},
+  {label: "Contact", href: "contact"},
+  {label: "Fun Facts", href: "fun-facts"},
+]
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol>
-          <li>
-            Get started by editing <code>src/app/page.tsx</code>.
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+    <div  className={styles.page}>
+        <header className={styles.header}>
+            <div className={styles.title}>
+              Colin J. Eberhardt
+            </div>
+            <div className={styles.links}>
+              { NAV_LINKS.map((link:any) => 
+              <Link 
+                className={styles.link}
+                href={link.href}>
+                  {link.label}
+                </Link>
+              )}
+            </div>
+        </header>
+        <main className={styles['main-content']}>
+          <div className={styles['content-container']}>
+            {/* Prof pic and quick about me */}
             <Image
               className={styles.logo}
-              src="/vercel.svg"
+              src="/boss-man.svg"
               alt="Vercel logomark"
               width={20}
               height={20}
             />
-            Deploy now
-          </a>
-          <a
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className={styles.secondary}
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className={styles.footer}>
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+            <div className={styles['desc-container']}>
+              <p className={styles.caption}>
+                Meet your next software engineer.
+              </p>
+              <p className={styles.subtext}>
+                Hey, I'm Colin&mdash; a passionate software engineer who thrives on solving complex problems and creating innovative solutions.
+              </p>
+            </div>
+          </div>          
+          {/* <hr className={styles.divider}/>
+          <div className={styles['content-container']}>
+              <Timeline />
+          </div> */}
+          <hr className={styles.divider}/>
+          <div className={styles['content-container']}>
+            <div className={styles['desc-container']}>
+              <p className={styles.subtext}>The toast refused to leave the kitchen, claiming it had found true love in the butter dish. Meanwhile, a cloud of spaghetti floated by, singing opera to the cows below.</p>
+              <p className={styles.subtext}>A parade of singing teacups marched down the street, escorted by a brigade of tap-dancing kangaroos. At the corner, a wizard in a polka-dotted robe offered free advice on how to juggle pineapples.</p>
+            </div>
+            <div className={styles['desc-container']}>              
+              <p className={styles.subtext}>The potatoes began to plot their escape to the moon, but they were delayed by a meeting of disinterested carrots. On the other side of the garden, a tomato declared itself the king of all vegetables.</p>
+              <p className={styles.subtext}>The wind started a poetry club for clouds, where each poem was about the weather’s feelings. Meanwhile, a sunflower in a top hat negotiated peace between the ants and the butterflies.</p>
+            </div>
+          </div>
+          <hr className={styles.divider}/>
+          <div className={styles['content-container']}>
+            Insert experience, tech skills, and second link to resume here
+          </div>
+        </main> 
     </div>
   );
 }

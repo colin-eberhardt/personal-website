@@ -6,17 +6,19 @@
   --button-primary-hover: #383838;
   --button-secondary-hover: #f2f2f2;
 
-  display: grid;
-  grid-template-rows: 20px 1fr 20px;
-  align-items: center;
-  justify-items: center;
+  display: flex;
+  flex-direction: column;
+  /* grid-template-rows: 20px 1fr 20px; */
+  /* align-items: center; */
+  /* justify-items: center; */
   min-height: 100svh;
   padding: 80px;
-  gap: 64px;
+  gap: 10rem;
   font-family: var(--font-geist-sans);
+  color: #373B3A;
 }
 
-@media (prefers-color-scheme: dark) {
+/*  @media (prefers-color-scheme: dark) {
   .page {
     --gray-rgb: 255, 255, 255;
     --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
@@ -106,10 +108,10 @@ a.secondary {
 
 .footer img {
   flex-shrink: 0;
-}
+} */
 
 /* Enable hover only on non-touch devices */
-@media (hover: hover) and (pointer: fine) {
+/* @media (hover: hover) and (pointer: fine) {
   a.primary:hover {
     background: var(--button-primary-hover);
     border-color: transparent;
@@ -165,4 +167,77 @@ a.secondary {
   .logo {
     filter: invert();
   }
+} */
+
+
+.header {
+  height: 4rem;
+  padding: 1rem 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.header .title {
+  margin-right: auto;
+  font-size: 2rem;
+  font-weight: 500;
+}
+
+.header .links {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.link:link,.link:visited {
+  padding: 1rem;
+}
+
+.link:hover{
+  color: #626967;
+  text-decoration: underline;
+}
+
+.divider {
+  border-style: solid;
+}
+
+.main-content {
+  padding: 1rem 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 10rem;
+}
+
+.content-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 10rem;
+}
+
+.logo {
+  height: 30%;
+  width: 30%;
+}
+
+.content-container .desc-container {
+  flex: 2;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-self: center;
+  padding: 1rem;
+}
+
+.content-container .caption {
+  font-size: 3rem;
+}
+
+.content-container .subtext {
+  font-size: 1.5rem;
+}
+
+.timeline { 
+  background-color: #C0C4B6;
 }
